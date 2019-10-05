@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <title> IMEDZINE</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="fontawesome-free-5.10.0-web/css/all.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!--[if lt IE 9]>
+		<script src="assets/js/html5shiv.min.js"></script>
+		<script src="assets/js/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    <div class="main-wrapper">
+        <div class="header">
+			<div class="header-left">
+				<a href="index.html" class="logo">
+					<img src="assets/img/logo.png" width="35" height="35" alt=""> <span>IMEDZINE</span>
+				</a>
+			</div>
+			<a id="toggle_btn" href="javascript:void(0);"><i class="fa fa-bars"></i></a>
+            <a id="mobile_btn" class="mobile_btn float-left" href="edit-profile.html#sidebar"><i class="fa fa-bars"></i></a>
+            <ul class="nav user-menu float-right">
+               
+                <li class="nav-item dropdown has-arrow">
+                    <a href="edit-profile.html#" class="dropdown-toggle nav-link user-link" data-toggle="dropdown">
+                        <span class="user-img"><img class="rounded-circle" src="assets/img/user.jpg" width="40" alt="Admin">
+							<span class="status online"></span></span>
+                        <span>Admin</span>
+                    </a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="profile.html">My Profile</a>
+						<a class="dropdown-item" href="edit-profile.html">Edit Profile</a>
+						<a class="dropdown-item" href="settings.html">Settings</a>
+						<a class="dropdown-item" href="login.html">Logout</a>
+					</div>
+                </li>
+            </ul>
+            <div class="dropdown mobile-user-menu float-right">
+                <a href="edit-profile.html#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="profile.html">My Profile</a>
+                    <a class="dropdown-item" href="edit-profile.html">Edit Profile</a>
+                    <a class="dropdown-item" href="settings.html">Settings</a>
+                    <a class="dropdown-item" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-inner slimscroll">
+                <div id="sidebar-menu" class="sidebar-menu">
+                    <ul>
+                        <li class="menu-title">Main</li>
+                        <li>
+                            <a href="/index"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
+                        </li>
+                        <li>
+                            <a href="/doctors"><i class="fa fa-user-md"></i> <span>Doctors</span></a>
+                        </li>
+                        <li>
+                            <a href="/patients"><i class="fa fa-wheelchair"></i> <span>Patients</span></a>
+                        </li>
+                        <!-- CLINIC et ces services -->
+                        <li >
+                            <a href="/clinics"><i class="far fa-hospital"></i> <span>Clinics</span></a>
+                        </li>
+                        <li >
+                            <a href="/clinic-services"><i class="far fa-hospital"></i> <span>Clinic Services</span></a>
+                        </li>
+                        <!-- PHARMACY et ces services -->
+                        <li class="active">
+                            <a href="/pharmacys"><i class="fas fa-medkit"></i> <span>Pharmacys</span></a>
+                        </li>
+                        <li >
+                            <a href="/pharmacy-services"><i class="fas fa-medkit"></i> <span>Pharmacy Services</span></a>
+                        </li>
+                        <!-- APPOINTMENTS  -->
+                        
+
+                        <li >
+                            <a href="/doctors-appointments"><i class="fa fa-calendar"></i> <span>Doctors Appointments</span></a>
+                        </li>
+
+                        <li>
+                            <a href="/clinics-appointments"><i class="fa fa-calendar"></i> <span>Clinic Appointments</span></a>
+                        </li>
+                        <li>
+                            <a href="/approval"><i class="fas fa-user-check"></i> <span>Approval</span></a>
+                        </li>
+                        <li>
+                            <a href="settings.html"><i class="fa fa-cog"></i> <span>Settings</span></a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="page-wrapper">
+            <div class="content">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h4 class="page-title">Edit Profile Pharmacy</h4>
+                    </div>
+                </div>
+                
+                
+                
+                <form action="edit-pharmacy?id=<%=pharmacy.idpharmacie%>" method="POST" enctype="multipart/form-data" id="add-ph">
+                    <div class="card-box">
+                        <h3 class="card-title">Basic Informations</h3>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="profile-img-wrap">
+                                    <img class="inline-block" src="img/<%=pharmacy.phprofile%>" alt="user">
+                                    <div class="fileupload btn">
+                                        <span class="btn-text">Edit</span>
+                                        
+                                        <input type="hidden" name="image" value="<%=pharmacy.phprofile%>"> 
+                                        <input class="upload" type="file" name="phprofile">
+                                    </div>
+                                </div>
+                                <div class="profile-basic">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group form-focus">
+                                                <label class="focus-label">First Name</label>
+                                                <input type="text" name="nom" class="form-control floating" value="<%=pharmacy.nom%>">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group form-focus">
+                                                <label class="focus-label">Last Name</label>
+                                                <input type="text" name="prenom" class="form-control floating" value="<%=pharmacy.prenom%>">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group form-focus">
+                                                <label class="focus-label">Email</label>
+                                                <div class="cal-icon">
+                                                    <input class="form-control floating"  type="text" name="email" onblur="getfirstmail('<%=pharmacy.email%>');checkmail(this,'pharmacy')" value="<%=pharmacy.email%>">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--<div class="col-md-6">
+                                            <div class="form-group form-focus select-focus">
+                                                <label class="focus-label">Gendar</label>
+                                                <select class="select form-control floating">
+                                                    <option value="male selected" name="sex">Male</option>
+                                                    <option value="female" name="sex">Female</option>
+                                                </select>
+                                            </div>
+                                        </div>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-box">
+                        <h3 class="card-title">Contact Informations</h3>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group form-focus">
+                                    <label class="focus-label">Address</label>
+                                    <input type="text" name="adr" class="form-control floating" value="<%=pharmacy.adr%>">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group form-focus">
+                                    <select  style="width:48.5%" name="adr1">
+                                        <option class="focus-label" value="" selected>--Please choose Your State--</option>
+                                        <option class="focus-label" value="ADRAR">ADRAR</option>
+                                        <option class="focus-label" value="Aïn Defla">Aïn Defla</option>
+                                        
+                                        <option class="focus-label" value="Aïn Témouchent">Aïn Témouchent</option>
+                                        <option class="focus-label" value="Alger">Alger</option>
+                                        <option class="focus-label" value="Annaba">Annaba</option>
+                                        <option class="focus-label" value="Bayadh">Bayadh</option>
+                                        <option class="focus-label" value="Oued">Oued</option>
+                                        <option class="focus-label" value="Tarf">Tarf</option>
+                                        <option class="focus-label" value="Illizi">Illizi</option>
+                                        
+                                        <option class="focus-label" value="El Bouaghi">El Bouaghi</option>
+                                        <option class="focus-label" value="Batna">Batna</option>
+                                        <option class="focus-label" value="Béchar">Béchar</option>
+                                        <option class="focus-label" value="Béjaïa">Béjaïa</option>
+                                        <option class="focus-label" value="Biskra">Biskra</option>
+                                        <option class="focus-label" value="Blida">Blida</option>
+                                        <option class="focus-label" value="Bordj">Bordj Bou Arreridj</option>
+                                        <option class="focus-label" value="Bouira">Bouira</option>
+                                        <option class="focus-label" value="Boumerdès">Boumerdès</option>
+                                        <option class="focus-label" value="Chlef">Chlef</option>
+                                        <option class="focus-label" value="Constantine">Constantine</option>
+                                        <option class="focus-label" value="Djelfa">Djelfa</option>
+                                        <option class="focus-label" value="Ghardaïa">Ghardaïa</option>
+                                        <option class="focus-label" value="Guelma">Guelma</option>
+                                        <option class="focus-label" value="Jijel">Jijel</option>
+                                        <option class="focus-label" value="Khenchela">Khenchela</option>
+                                        <option class="focus-label" value="Laghouat">Laghouat</option>
+                                        <option class="focus-label" value="M'Sila">M'Sila</option>
+                                        <option class="focus-label" value="Mascara">Mascara</option>
+                                        <option class="focus-label" value="Médéa">Médéa</option>
+                                        <option class="focus-label" value="Mila">Mila</option>
+                                        <option class="focus-label" value="Mostaganem">Mostaganem</option>
+                                        <option class="focus-label" value="Naâma">Naâma</option>
+                                        <option class="focus-label" value="Oran">Oran</option>
+                                        <option class="focus-label" value="Ouargla">Ouargla</option>
+                                        <option class="focus-label" value="Relizane">Relizane</option>
+                                        <option class="focus-label" value="Saïda">Saïda</option>
+                                        <option class="focus-label" value="Sétif">Sétif</option>
+                                        <option class="focus-label" value="Sba">Sidi Bel Abbès</option>
+                                        <option class="focus-label" value="Skikda">Skikda</option>
+                                        <option class="focus-label" value="Souk Ahras">Souk Ahras</option>
+                                        <option class="focus-label" value="Tamanrasset">Tamanrasset</option>
+                                        <option class="focus-label" value="Tébessa">Tébessa</option>
+                                        <option class="focus-label" value="Tiaret">Tiaret</option>
+                                        <option class="focus-label" value="Tindouf">Tindouf</option>
+                                        <option class="focus-label" value="Tipaza">Tipaza</option>
+                                        <option class="focus-label" value="Tissemsilt">Tissemsilt</option>
+                                        <option class="focus-label" value="Tizi">Tizi Ouzou</option>
+                                        <option class="focus-label" value="Tlemcen">Tlemcen</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!--<div class="col-md-6">
+                                <div class="form-group form-focus">
+                                    <label class="focus-label">Country</label>
+                                    <input type="text" class="form-control floating" value="United States">
+                                </div>
+                            </div> -->
+                            <div class="col-md-6">
+                                <div class="form-group form-focus">
+                                    <label class="focus-label">Phone Number</label>
+                                    <input type="text" class="form-control floating" name="numtel" onblur="getfirstphone('<%=pharmacy.numtel%>');checkphone(this,'pharmacy')" value="<%=pharmacy.numtel%>">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group form-focus">
+                                    <label class="focus-label">Password</label>
+                                    <input type="password" class="form-control floating" name="password" value="<%=pharmacy.pwd%>">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group form-focus">
+                                    <label class="focus-label">Confirmer Password</label>
+                                    <input type="password" class="form-control floating" name="cpassword" value="<%=pharmacy.pwd%>">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group form-focus">
+                                    <label class="focus-label">Pin Code</label>
+                                    <input type="text" class="form-control floating" name="codepos" value="<%=pharmacy.codepos%>">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group form-focus">
+                                    <label class="focus-label">Education</label>
+                                    <input type="text" class="form-control floating" name="education" value="<%=pharmacy.education%>">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group form-focus">
+                                    <label class="focus-label">Experience</label>
+                                    <input type="text" class="form-control floating" name="experience" value="<%=pharmacy.experience%>">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div class="card-box">
+                        <h3 class="card-title">Education Informations</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group form-focus">
+                                    <label class="focus-label">Institution</label>
+                                    <input type="text" class="form-control floating" name="education">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group form-focus">
+                                    <label class="focus-label">Subject</label>
+                                    <input type="text" class="form-control floating" name="specialite">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group form-focus">
+                                    <label class="focus-label">Experience</label>
+									<div class="cal-icon">
+										<input type="text" class="form-control floating datetimepicker" name="experience">
+									</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group form-focus">
+                                    <label class="focus-label">Complete Date</label>
+									<div class="cal-icon">
+										<input type="text" class="form-control floating datetimepicker" value="31/05/2006">
+									</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group form-focus">
+                                    <label class="focus-label">Degree</label>
+                                    <input type="text" class="form-control floating" value="BE Computer Science">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group form-focus">
+                                    <label class="focus-label">Grade</label>
+                                    <input type="text" class="form-control floating" value="Grade A">
+                                </div>
+                            </div>
+                        </div>-->
+                      
+                    <div class="card-box">
+                        <h3 class="card-title">Experience Informations</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>CV</label>
+                                    <div class="profile-upload">
+                                        <div class="upload-img">
+                                            <img alt="" src="img/<%=pharmacy.CV%>">
+                                        </div>
+                                        <div class="upload-input">
+                                                
+                                                    <input type="hidden" name="cvfile" value="<%=pharmacy.CV%>">
+                                            <input type="file" class="form-control" name="CV" value="img/avatar">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="text-center m-t-20">
+                        <button class="btn btn-primary submit-btn" type="submit" onclick="validformpharmacy('update')" id="pharmacy-form-btn">Update</button>
+                    </div>
+                </form>
+            </div>
+            <div class="notification-box">
+                <div class="msg-sidebar notifications msg-noti">
+                    <div class="topnav-dropdown-header">
+                        <span>Messages</span>
+                    </div>
+                    <div class="drop-scroll msg-list-scroll" id="msg_list">
+                        <ul class="list-box">
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">R</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author">Richard Miles </span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item new-message">
+                                        <div class="list-left">
+                                            <span class="avatar">J</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author">John Doe</span>
+                                            <span class="message-time">1 Aug</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">T</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author"> Tarah Shropshire </span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">M</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author">Mike Litorus</span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">C</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author"> Catherine Manseau </span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">D</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author"> Domenic Houston </span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">B</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author"> Buster Wigton </span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">R</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author"> Rolland Webber </span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">C</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author"> Claire Mapes </span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">M</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author">Melita Faucher</span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">J</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author">Jeffery Lalor</span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">L</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author">Loren Gatlin</span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="chat.html">
+                                    <div class="list-item">
+                                        <div class="list-left">
+                                            <span class="avatar">T</span>
+                                        </div>
+                                        <div class="list-body">
+                                            <span class="message-author">Tarah Shropshire</span>
+                                            <span class="message-time">12:28 AM</span>
+                                            <div class="clearfix"></div>
+                                            <span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="topnav-dropdown-footer">
+                        <a href="chat.html">See all messages</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar-overlay" data-reff=""></div>
+    <script src="assets/js/jquery-3.2.1.min.js"></script>
+	<script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.slimscroll.js"></script>
+    <script src="assets/js/select2.min.js"></script>
+    <script src="assets/js/moment.min.js"></script>
+    <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/functions.js"></script>
+    
+</body>
+
+</html>

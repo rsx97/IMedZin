@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>IMEDZINE Health Directory</title>
+    <meta name="author" content="Nile-Theme">
+    <meta name="robots" content="index follow">
+    <meta name="googlebot" content="index follow">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="directory, doctor, doctor directory, Health directory, listing, map, medical, medical directory, professional directory, reservation, reviews">
+    <meta name="description" content="Health Care & Medical Services Directory">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- google fonts -->
+    <link href="CSS\css_2.css" rel="stylesheet">
+    <!-- animate -->
+    <link rel="stylesheet" href="CSS\animate.css" />
+    <!-- owl Carousel assets -->
+    <link href="CSS\owl.carousel.css" rel="stylesheet">
+    <link href="CSS\owl.theme.css" rel="stylesheet">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="CSS\bootstrap.min.css">
+    <!-- hover anmation -->
+    <link rel="stylesheet" href="CSS\hover-min.css">
+    <!-- flag icon -->
+    <link rel="stylesheet" href="CSS\flag-icon.min.css">
+    <!-- main style -->
+    <link rel="stylesheet" href="CSS\style.css">
+    <!-- colors -->
+    <link rel="stylesheet" href="CSS\main.css">
+    <!-- elegant icon -->
+    <link rel="stylesheet" href="CSS\elegant_icon.css">
+    <!-- admin style -->
+    <link rel="stylesheet" href="CSS\sb-admin.css">
+    <link rel="stylesheet" type="text/css" href="../tabib-V-Finale-ADMIN/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../tabib-V-Finale-ADMIN/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../tabib-V-Finale-ADMIN/assets/css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="../tabib-V-Finale-ADMIN/assets/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="../tabib-V-Finale-ADMIN/assets/css/style.css">
+    <!--[if lt IE 9]>
+        <script src="assets/js/html5shiv.min.js"></script>
+        <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+    <!-- jquery library  -->
+    <script src="JS\jquery-3.2.1.min.js"></script>
+    <!-- fontawesome  -->
+    <script defer src="JS\all.js"></script>
+
+</head>
+
+<body>
+
+    <header class="background-white box-shadow fixed-top z-index-99">
+        <nav class="container-fluid header-in">
+            <div class="row">
+                <div class="col-xl-2 col-lg-2">
+                    <a id="logo" href="index.html" class="d-inline-block margin-tb-15px"><img src="IMG\logo-1.png" alt=""></a>
+                    <a class="mobile-toggle padding-13px background-main-color" href="dashboard-my-profile-med.html#"><i class="fas fa-bars"></i></a>
+                </div>
+                <div class="col-xl-6 col-lg-8 position-inherit">
+                    <ul id="menu-main" class="nav-menu float-lg-right link-padding-tb-20px">
+                        <li class="has-dropdown"><a href="index.html#">Home</a></li>
+
+                        <li><a href="page-contact-us.html">Contact Us</a></li>
+                    </ul>
+
+                </div>
+                <div class="col-xl-4 d-none d-xl-block">
+                    <hr class="margin-bottom-0px d-block d-sm-none">
+
+                    <div class="nav-item dropdown float-left">
+                        <a href="dashboard-my-profile-pharma.html" class="margin-top-15px d-inline-block text-grey-3 margin-right-15px"><img src="IMG\clinique.jpg" class="height-30px border-radius-30" alt="">Pharmacy El Amel </a>
+                    </div>
+
+                    <div class="nav-item float-left">
+                        <a href="page-login.html" class="nav-link margin-top-10px" data-toggle="modal" data-target="#exampleModal">
+                            <div class="text-grey-3"><i class="fa fa-fw fa-sign-out-alt"></i>Log Out</div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- // Header  -->
+
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark z-index-9  fixed-top" id="mainNav">
+
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+
+            <ul class="navbar-nav navbar-sidenav background-main-color admin-nav" id="admin-nav">
+                <li class="nav-item">
+                    <span class="nav-title-text">Main</span>
+                </li>
+
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="My Profile">
+                    <a class="nav-link " href="dashboard-my-profile-pharma.html">
+
+                        <span class="nav-link-text">My Profile</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="My services">
+                    <a class="nav-link active" href="dashboard-work-time-pharma.html" data-toggle="modal" data-target="#exampleModal">
+
+                        <span class="nav-link-text"> My Work time</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="My services">
+                    <a class="nav-link" href="dashboard-add-service-pharma.html" data-toggle="modal" data-target="#exampleModal">
+
+                        <span class="nav-link-text"> My services</span>
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+    </nav>
+
+    <div class="page-wrapper">
+        <div class="content">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <h4 class="page-title">Add Schedule</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <form>
+                        <div class="row">
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Available Days</label>
+                                    <select class="select" multiple>
+                                        <option>Select Days</option>
+                                        <option>Sunday</option>
+                                        <option>Monday</option>
+                                        <option>Tuesday</option>
+                                        <option>Wednesday</option>
+                                        <option>Thursday</option>
+                                        <option>Friday</option>
+                                        <option>Saturday</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Start Time</label>
+                                    <div class="time-icon">
+                                        <input type="text" class="form-control" id="datetimepicker3">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>End Time</label>
+                                    <div class="time-icon">
+                                        <input type="text" class="form-control" id="datetimepicker4">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea cols="30" rows="4" class="form-control"></textarea>
+                        </div>
+
+                        <div class="m-t-20 text-center">
+                            <a onclick="window.location.href='dashboard-work-time-pharma.html'" class="btn btn-primary submit-btn" style="color: aliceblue">Create Schedule</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="sidebar-overlay" data-reff=""></div>
+    <script src="sticky-sidebar.js"></script>
+    <script src="YouTubePopUp.jquery.js"></script>
+    <script src="owl.carousel.min.js"></script>
+    <script src="imagesloaded.min.js"></script>
+    <script src="wow.min.js"></script>
+    <script src="custom.js"></script>
+    <script src="popper.min.js"></script>
+    <script src="http://nilethemes.com/html/tabib/bootstrap.min.js"></script>
+
+    <script src="../tabib-V-Finale-ADMIN/assets/js/jquery-3.2.1.min.js"></script>
+    <script src="../tabib-V-Finale-ADMIN/assets/js/popper.min.js"></script>
+    <script src="../tabib-V-Finale-ADMIN/assets/js/bootstrap.min.js"></script>
+    <script src="../tabib-V-Finale-ADMIN/assets/js/jquery.slimscroll.js"></script>
+    <script src="../tabib-V-Finale-ADMIN/assets/js/select2.min.js"></script>
+    <script src="../tabib-V-Finale-ADMIN/assets/js/moment.min.js"></script>
+    <script src="../tabib-V-Finale-ADMIN/assets/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="../tabib-V-Finale-ADMIN/assets/js/app.js"></script>
+    <script>
+        $(function() {
+            $('#datetimepicker3').datetimepicker({
+                format: 'LT'
+            });
+            $('#datetimepicker4').datetimepicker({
+                format: 'LT'
+            });
+        });
+    </script>
+</body>
+
+</html>

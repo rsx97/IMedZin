@@ -1,0 +1,33 @@
+{
+  "name": "admin",
+  "version": "1.0.0",
+  "description": "admin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Aymen Boukhelkhal",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "body-parser": "^1.19.0",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.1.5",
+    "express-html": "^1.0.1",
+    "mysql": "^2.17.1",
+    "mysql2": "^1.7.0",
+    "nodemon": "^1.19.1",
+    "sequelize": "^5.18.4"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/AymenBkl/Imedezine.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AymenBkl/Imedezine/issues"
+  },
+  "homepage": "https://github.com/AymenBkl/Imedezine#readme"
+}
